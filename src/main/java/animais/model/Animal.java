@@ -23,52 +23,28 @@ public class Animal {
     public enum Sexo { MACHO, FEMEA }
     public enum Tamanho { PEQUENO, MEDIO, GRANDE }
 
-    public String getEspecie() {
-        return especie;
-    }
+    public String getEspecie() { return especie; }
 
-    public void setEspecie(String especie) {
-        this.especie = especie;
-    }
+    public void setEspecie(String especie) { this.especie = especie;}
 
-    public String getRaca() {
-        return raca;
-    }
+    public String getRaca() { return raca; }
 
-    public void setRaca(String raca) {
-        this.raca = raca;
-    }
+    public void setRaca(String raca) { this.raca = raca; }
 
-    public Sexo getSexo() {
-        return sexo;
-    }
+    public Sexo getSexo() { return sexo; }
 
-    public void setSexo(Sexo sexo) {
-        this.sexo = sexo;
-    }
+    public void setSexo(Sexo sexo) { this.sexo = sexo; }
 
-    public Integer getIdade_aproximada() {
-        return idade_aproximada;
-    }
+    public Integer getIdade_aproximada() { return idade_aproximada; }
 
-    public void setIdade_aproximada(Integer idade_aproximada) {
-        this.idade_aproximada = idade_aproximada;
-    }
+    public void setIdade_aproximada(Integer idade_aproximada) { this.idade_aproximada = idade_aproximada; }
 
-    public Tamanho getTamanho() {
-        return tamanho;
-    }
+    public Tamanho getTamanho() { return tamanho; }
 
-    public void setTamanho(Tamanho tamanho) {
-        this.tamanho = tamanho;
-    }
+    public void setTamanho(Tamanho tamanho) { this.tamanho = tamanho; }
 
-    public String getUrlImagem() {
-        return urlImagem;
-    }
+    public String getUrlImagem() { return urlImagem; }
 
-    public void setUrlImagem(String urlImagem) {
-        this.urlImagem = urlImagem;
-    }
+    public void setUrlImagem(String urlImagem) { this.urlImagem = urlImagem; }
 
 }

@@ -72,13 +72,11 @@ public class AnimalController {
         }
 
         Animal animal = animalExistente.get();
-        // Atualiza apenas os campos que vieram no DTO
         if (animalDTO.getEspecie() != null) animal.setEspecie(animalDTO.getEspecie());
         if (animalDTO.getRaca() != null) animal.setRaca(animalDTO.getRaca());
         if (animalDTO.getIdade_aproximada() != null) animal.setIdade_aproximada(animalDTO.getIdade_aproximada());
         if (animalDTO.getUrlImagem() != null) animal.setUrlImagem(animalDTO.getUrlImagem());
 
-        // Tratamento para Enums (garantindo que os valores sejam válidos)
         try {
             if (animalDTO.getSexo() != null) {
                 animal.setSexo(Animal.Sexo.valueOf(animalDTO.getSexo().toUpperCase()));
@@ -100,7 +98,6 @@ public class AnimalController {
         return ResponseEntity.ok(updatedAnimal);
     }
 
-    // EXCLUIR UM ANIMAL (DELETE)
     @DeleteMapping("/{id}")
     public ResponseEntity<Map<String, String>> deletarAnimal(@PathVariable Long id) {
         if (!animalRepository.existsById(id)) {
