@@ -7,7 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import animais.repository.AnimalRepository;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -100,11 +102,15 @@ public class AnimalController {
 
     // EXCLUIR UM ANIMAL (DELETE)
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deletarAnimal(@PathVariable Long id) {
+    public ResponseEntity<Map<String, String>> deletarAnimal(@PathVariable Long id) {
         if (!animalRepository.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Animal não encontrado");
         }
         animalRepository.deleteById(id);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Animal excluído com sucesso!");
+
+        return ResponseEntity.ok(response);
     }
 }
